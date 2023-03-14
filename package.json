@@ -1,14 +1,27 @@
 {
   "devDependencies": {
     "@types/node": "^18.14.6",
+    "concurrently": "^7.6.0",
     "tsup": "^6.6.3",
     "tsx": "^3.12.3",
     "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "dev": "concurrently \"tsx src/server/server.ts\" \"docker-compose up\" \"npx prisma studio\"  ",
+    "build": "tsx src/server/server.ts",
+    "db:migration:deploy": "prisma migrate deploy",
+    "db:seed": "prisma db seed",
+    "db:seed:dev": "cross-env NODE_ENV=development prisma db seed",
+    "db:push": "prisma db push"
   },
   "dependencies": {
     "@prisma/client": "^4.11.0",
     "fastify": "^4.14.1",
     "node": "^19.6.1",
-    "prisma": "^4.11.0"
-  }
+    "prisma": "^4.11.0",
+    "zod": "^3.21.4"
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
