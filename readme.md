@@ -1,3 +1,5 @@
+## api acabaa quarta-feira, 14 de junho de 2023
+
 O projeto em questão é uma rede social que tem como objetivo permitir que os usuários criem perfis, publiquem seus próprios posts e comentem em posts de outros usuários, além de interagir com outras pessoas da comunidade.
 
 Para isso, o projeto foi desenvolvido utilizando o Prisma como ORM (Object Relational Mapping), que facilita o acesso e manipulação do banco de dados. O modelo de dados consiste em três entidades principais: Usuário, Post e Comentário.
