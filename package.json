@@ -7,7 +7,7 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "dev": "concurrently \"tsx src/server/server.ts\" \"docker-compose up\" \"npx prisma studio\"  ",
+    "dev": "concurrently  \"docker-compose up\" \"tsx src/server/server.ts\"  \"npx prisma studio\"  ",
     "build": "tsx src/server/server.ts",
     "db:migration:deploy": "prisma migrate deploy",
     "db:seed": "prisma db seed",
