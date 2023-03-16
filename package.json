@@ -6,9 +6,13 @@
     "tsx": "^3.12.3",
     "typescript": "^4.9.5"
   },
+  "engines": {
+    "node": ">=19.0.0"
+  },
   "scripts": {
-    "dev": "concurrently  \"docker-compose up\" \"tsx src/server/server.ts\"  \"npx prisma studio\"  ",
-    "build": "tsx src/server/server.ts",
+    "dev": "concurrently \"tsx src/server/server.ts\" \"docker-compose up\" \"npx prisma studio\"  ",
+    "build": "tsup src",
+    "start": "node dist/index.js",
     "db:migration:deploy": "prisma migrate deploy",
     "db:seed": "prisma db seed",
     "db:seed:dev": "cross-env NODE_ENV=development prisma db seed",
