@@ -36,6 +36,14 @@ app.get("/users", async (request, reply) => {
   return reply.status(200).send(users);
 });
 
+app.put("/users/:id", async (request, reply) => {
+  const updateUserschema = z.object({
+    name: z.string(),
+    email: z.string(),
+    password: z.string(),
+  });
+});
+
 app.post("/users", async (request, reply) => {
   const createUserSchema = z.object({
     name: z.string(),
